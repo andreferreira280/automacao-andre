@@ -11,15 +11,23 @@ public class CadastrarPage {
 		this.driver = driver;
 	}
 
-	public void preencherCampos(String nome, String sobrenome, String email,
-			String senha) {
+	public void preencheNome(String nome) {
 		WebElement txtNome = driver.findElement(By.id("firstName"));
-		WebElement txtSobrenome = driver.findElement(By.id("lastName"));
-		WebElement txtEmail = driver.findElement(By.id("email"));
-		WebElement txtSenha = driver.findElement(By.id("password"));
 		txtNome.sendKeys(nome);
+	}
+
+	public void preencheSobrenome(String sobrenome) {
+		WebElement txtSobrenome = driver.findElement(By.id("lastName"));
 		txtSobrenome.sendKeys(sobrenome);
+	}
+
+	public void preencheEmail(String email) {
+		WebElement txtEmail = driver.findElement(By.id("email"));
 		txtEmail.sendKeys(email);
+	}
+
+	public void preencheSenha(String senha) {
+		WebElement txtSenha = driver.findElement(By.id("password"));
 		txtSenha.sendKeys(senha);
 		txtSenha.submit();
 	}
